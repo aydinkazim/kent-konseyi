@@ -12,6 +12,8 @@ module.exports = {
       beyaz: "#FFFFFF",
       mavimsi: "#1E075F",
       footer: "#0E0231;",
+      acikGri: "#808080",
+      koyuGri: "#4D4D4D",
     },
   },
   plugins: [],

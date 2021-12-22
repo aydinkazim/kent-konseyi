@@ -3,13 +3,21 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="footer bg-footer text-beyaz relative pt-1 border-b-2 border-blue-700">
-      <div className="container mx-auto px-6">
+    <footer className="footer bg-footer text-beyaz relative pt-1 lg:pt-24 border-b-2 ">
+      <div className=" lg:px-24 px-8">
         <div className="sm:flex sm:mt-8">
-          <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
-            <div className="flex flex-col">
-              <span className="font-bold   mb-2">H. İbrahim Yılmaz</span>
-              <div className="flex">
+          <div className="mt-8 sm:mt-0 sm:w-full flex flex-col md:flex-row justify-between">
+            <img
+              className="absolute w-80 left-20 hidden md:block"
+              src="images/footer-left.svg"
+            />
+            <div className="flex flex-col ">
+              <img
+                className="mb-7"
+                src="images/hiy-logo-white.svg"
+                alt="Halil İbrahim Yılmaz logo beyaz hali"
+              ></img>
+              <div className="flex mb-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -38,7 +46,7 @@ function Footer() {
                   </a>
                 </span>
               </div>
-              <div className="flex">
+              <div className="flex mb-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -85,78 +93,85 @@ function Footer() {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col   font-['Helvetica']">
+            <div className="flex flex-col font-['Helvetica']">
               <span className="my-2">
                 <Link href="/hakkimda">
                   <a className="font-bold text-lg">Hakkımda</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/blog">
                   <a className="font-bold text-lg">Blog</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/haberler">
                   <a className="font-bold text-lg">Haberler</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/galeri">
                   <a className="font-bold text-lg">Galeri</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/galeri">
                   <a className="">Fotoğraflar</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/galeri">
                   <a className="">Haber Küpürler</a>
                 </Link>
               </span>
-              <span className="my-3">
+              <span className="my-2.5">
                 <Link href="/galeri">
                   <a className="">Videolar</a>
                 </Link>
               </span>
             </div>
-            <div className="flex flex-col">
-              <span className="my-2">
+            <div className="flex flex-col space-y-8 ">
+              <span className="mt-2 -my-2">
                 <Link href="/hakkimda">
                   <a className="font-bold text-lg">Latest Post</a>
                 </Link>
               </span>
-              <div className="flex">
-                <div>
-                  <img src="https://placekitten.com/100/100" alt="" />
-                </div>
+              <img className="absolute w-56 top-14 right-28 hidden md:block" src="images/footer-right.svg" />
+              <div className="flex space-x-4">
+                <img
+                  className="rounded-xl w-full"
+                  style={{ width: "100px", height: "100px" }}
+                  src="https://placekitten.com/400/400"
+                  alt=""
+                />
                 <div className="flex flex-col">
-                  <p>
+                  <p className="md:w-64 mb-4">
                     Integer molestie scelerisque et vel lorem sed proin id
                     varius
                   </p>
                   <div>7 Kasım, 2021</div>
                 </div>
               </div>
-              <div className="flex">
-                <div>
-                  <img src="https://placekitten.com/100/100" alt="" />
-                </div>
+              <div className="flex space-x-4">
+                <img
+                  className="rounded-xl w-full"
+                  style={{ width: "100px", height: "100px" }}
+                  src="https://placekitten.com/100/100"
+                  alt=""
+                />
                 <div className="flex flex-col">
-                  <p>
+                  <p className="md:w-64 mb-4">
                     Integer molestie scelerisque et vel lorem sed proin id
                     varius
                   </p>
-                  <div>7 Kasım, 2021</div>
+                  <div>19 Ekim, 2021</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-6">
+      <div className=" lg:px-24 px-8">
         <div className="mt-16 border-t-2  flex flex-col ">
           <div className="py-8">
             <div className="flex justify-between flex-wrap ">
