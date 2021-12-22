@@ -85,7 +85,7 @@ function Navbar() {
             </Link> */}
           </div>
         </div>
-        <div className={styles.top}></div>
+        {/* <div className={styles.top}></div> */}
       </nav>
     </>
   );
