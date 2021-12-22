@@ -1,7 +1,6 @@
 /*  ./components/Navbar.jsx     */
 import Link from "next/link";
 import { useState } from "react";
-import styles from "./header.module.css";
 
 function Navbar() {
   const [active, setActive] = useState(false);
