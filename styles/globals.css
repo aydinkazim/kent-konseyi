@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 38, 130, 0.3);
+  border-radius: 100vh;
+  border: 0px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* ----------------------------------------------------------- */
+
+.cerceve {
+  width: 270px;
+  height: 390px;
+  margin: 23px 20.6px 21px 23px;
+}
+
+.icerik {
+  height: 450px;
+}
+
+@media (min-width: 640px) {
+  /*sm*/
+}
+@media (min-width: 768px) {
+  /*md*/
+  .cerceve {
+    width: 389px;
+    height: 563px;
+    margin: 23px 20.6px 21px 23px;
+  }
+
+  .icerik {
+    height: 471px;
+  }
+}
+@media (min-width: 1024px) {
+  /*lg*/
+}
+@media (min-width: 1280px) {
+  /*xl*/
+}
+@media (min-width: 1536px) {
+  /*2xl*/
+}
