@@ -6,7 +6,7 @@ import Topbar from "./Topbar";
 
 function Layout({ children }) {
   return (
-    <div className="bg-gri ">
+    <div className="bg-gri">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"

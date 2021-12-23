@@ -3,7 +3,7 @@ import React from "react";
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap relative">
         <div className="flex flex-col md:w-1/2 pt-5 md:pt-44 px-5 md:px-24 ">
           <div className="text-koyuMor md:text-2xl font-bold font-['Helvetica'] pb-4">
             Ankara Kent Konseyi Belediye Başkanı

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Layout from "../components/Layout";
 
@@ -6,10 +7,17 @@ function hakkinda() {
     <Layout>
       <div className="grid md:grid-cols-5 gap-4 md:px-24 px-8 pb-24 pt-11 font-[Roboto]">
         <div className="xl:col-span-2 col-span-5 relative ">
-          <img
-            className="rounded-xl w-full max-w-md"
+          {/* <img
             src="images/hiy.png"
             alt="Halil İbrahim Yılmaz Ankara Kent Konsryi Başkanı"
+          /> */}
+          <Image
+            className="rounded-xl "
+            src="/images/hiy.png"
+            layout="intrinsic"
+            height={620}
+            width={448}
+            priority={true}
           />
           {/* Çerçeve <div className="absolute border-beyaz rounded-xl border-2  cerceve top-0 left-0 "></div> */}
         </div>

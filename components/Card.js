@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Card() {
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="max-w-lg mx-auto z-10">
       <Link href="#">
         <div className="bg-beyaz  rounded-xl max-w-xs">
           <div>

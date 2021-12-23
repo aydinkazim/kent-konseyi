@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Layout from "../components/Layout";
 
@@ -34,10 +35,17 @@ let images = [
 function galeri() {
   return (
     <Layout>
-      <img
+      {/* <img
         src="images/galeri-header.png"
         className="w-full object-contain pt-11 md:max-h-80"
-      ></img>
+      ></img> */}
+      <Image
+        src="/images/galeri-header.png"
+        layout="responsive"
+        height={338}
+        width={1240}
+        priority={true}
+      />
       <div className="flex bg-mavimsi md:w-72 w-44 mx-auto md:-mt-12 -mt-9  relative">
         <span className="font-[Roboto] font-bold md:text-4xl text-2xl text-beyaz md:py-4 md:px-14 py-2 px-7">
           Fotoğraflar
