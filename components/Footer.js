@@ -95,7 +95,7 @@ function Footer() {
             </div>
             <div className="flex flex-col font-['Helvetica']">
               <span className="my-2">
-                <Link href="/hakkimda">
+                <Link href="/hakkinda">
                   <a className="font-bold text-lg">Hakkımda</a>
                 </Link>
               </span>
@@ -136,7 +136,10 @@ function Footer() {
                   <a className="font-bold text-lg">Latest Post</a>
                 </Link>
               </span>
-              <img className="absolute w-56 top-14 right-28 hidden md:block" src="images/footer-right.svg" />
+              <img
+                className="absolute w-56 top-14 right-28 hidden md:block"
+                src="images/footer-right.svg"
+              />
               <div className="flex space-x-4">
                 <img
                   className="rounded-xl w-full"

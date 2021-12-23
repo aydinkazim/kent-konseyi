@@ -62,3 +62,32 @@
 @media (min-width: 1536px) {
   /*2xl*/
 }
+
+.masonry {
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+@screen md {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@screen lg {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@screen xl {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@screen 2xl {
+  .masonry {
+    column-count: 4;
+  }
+}

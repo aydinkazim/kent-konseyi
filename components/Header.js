@@ -12,7 +12,7 @@ function Navbar() {
   const navigation = [
     { name: "Anasayfa", href: "/" },
     { name: "Hakkında", href: "/hakkinda" },
-    { name: "Galeri", href: "#" },
+    { name: "Galeri", href: "/galeri" },
     { name: "Haberler", href: "#" },
     { name: "İletişim", href: "#" },
   ];
