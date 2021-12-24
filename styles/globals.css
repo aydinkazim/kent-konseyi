@@ -38,8 +38,15 @@
   height: 450px;
 }
 
+.youtube{
+  height: 200px;
+}
+
 @media (min-width: 640px) {
   /*sm*/
+  .youtube{
+    height: 500px;
+  }
 }
 @media (min-width: 768px) {
   /*md*/

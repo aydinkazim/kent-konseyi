@@ -14,7 +14,7 @@ module.exports = {
       footer: "#0E0231;",
       acikGri: "#808080",
       koyuGri: "#4D4D4D",
-      seffaf: "#0000ffff"
+      seffaf: "transparent"
     },
   },
   plugins: [],
