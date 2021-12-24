@@ -13,7 +13,7 @@ function Navbar() {
     { name: "Anasayfa", href: "/" },
     { name: "Hakkında", href: "/hakkinda" },
     { name: "Galeri", href: "/galeri" },
-    { name: "Haberler", href: "#" },
+    { name: "Haberler", href: "/haberler" },
     { name: "İletişim", href: "#" },
   ];
 
