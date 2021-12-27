@@ -4,8 +4,10 @@ import Layout from "../components/Layout";
 import { Tab } from "@headlessui/react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import client from "../apollo-client";
+import { gql } from "@apollo/client";
 
-export default function Home() {
+export default function Home({ posts, video }) {
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -15,6 +17,7 @@ export default function Home() {
   function openModal() {
     setIsOpen(true);
   }
+
   return (
     <Layout>
       <Hero />
@@ -23,13 +26,19 @@ export default function Home() {
         src="images/hero-bottom.png"
         alt=""
       />
-      <div className="relative ">
-        <img className="w-full" src="https://placekitten.com/1152/388" alt="" />
-        <p className="absolute md:bottom-10 bottom-0 left-7 right-0 md:w-2/3 text-beyaz font-[Roboto] md:text-2xl ">
-          <span className="font-bold">Halil İbrahim Yılmaz</span>, Türkiye
+      <div className="relative image-overlay">
+        <img
+          style={{ height: "600px" }}
+          className="md:h-96 object-cover w-full opacity-40"
+          src={video.videoResim.url}
+          alt=""
+        />
+        <p className="absolute md:bottom-10 bottom-5 left-7 right-0 md:w-2/3 text-beyaz font-[Roboto] md:text-2xl text-xl ">
+          {/* <span className="font-bold">Halil İbrahim Yılmaz</span>, Türkiye
           Cumhuriyetinin Başkenti Ankara’da, toplumun bütün kesimlerini ortak
           akıl ve dayanışma kültürü ile kent için emek verir hale getirme
-          hedefiyle çalışmalarına devam ediyor.
+          hedefiyle çalışmalarına devam ediyor. */}
+          {video.aciklama}
         </p>
         <img
           onClick={openModal}
@@ -92,6 +101,7 @@ export default function Home() {
                         className="w-full youtube"
                         height={500}
                         src="https://www.youtube.com/embed/F5tSoaJ93ac"
+                        src={`https://www.youtube.com/embed/${video.youtubeUrl}`}
                         title="YouTube video player"
                         frameBorder={0}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -114,10 +124,16 @@ export default function Home() {
         <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Haberler
         </div>
-        <div className="md:px-24 flex flex-wrap">
-          <Card />
-          <Card />
-          <Card />
+        <div className="md:px-24 flex flex-wrap justify-between">
+          {posts.map((post) => (
+            <Card
+              key={post.id}
+              image={post.coverImage.url}
+              description={post.description}
+              date={post.date}
+              slug={post.slug}
+            />
+          ))}
         </div>
         <img
           className="absolute right-0 md:top-1/2 bottom-40"
@@ -165,7 +181,14 @@ export default function Home() {
             </Tab.List>
             <div></div>
             <Tab.Panels>
-              <Tab.Panel>Twitter</Tab.Panel>
+              <Tab.Panel>
+                <a
+                  className="twitter-timeline"
+                  href="https://twitter.com/halilibrahimy_?ref_src=twsrc%5Etfw"
+                >
+                  Tweets by halilibrahimy_
+                </a>
+              </Tab.Panel>
               <Tab.Panel>Facebook</Tab.Panel>
               <Tab.Panel>Youtube</Tab.Panel>
               {/* ... */}
@@ -183,3 +206,42 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async (req, res) => {
+  const { data } = await client.query({
+    query: gql`
+      query AllPostQuery {
+        posts(first: 3, orderBy: date_DESC) {
+          id
+          slug
+          title
+          content {
+            html
+          }
+          coverImage {
+            url
+          }
+          date
+          description
+        }
+        video(where: { id: "ckxnjjhko0dse0b05heyaixap" }) {
+          id
+          aciklama
+          videoResim {
+            url
+          }
+          youtubeUrl
+        }
+      }
+    `,
+  });
+
+  const { posts, video } = data;
+
+  return {
+    props: {
+      posts,
+      video,
+    },
+  };
+};

@@ -14,6 +14,7 @@ function PostCoverImage({ title, src, slug, height, width }) {
       width={width}
       height={height}
       priority={true}
+      objectFit="cover"
     />
   );
   return (

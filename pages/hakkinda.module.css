@@ -1,0 +1,17 @@
+.test {
+  overflow: auto;
+  height: 450px;
+  position: relative;
+}
+
+.test > p {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  /*md*/
+
+  .test {
+    height: 471px;
+  }
+}

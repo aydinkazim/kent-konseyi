@@ -1,44 +1,12 @@
+import { gql } from "@apollo/client";
 import Image from "next/image";
 import React from "react";
+import client from "../apollo-client";
 import Layout from "../components/Layout";
 
-let images = [
-  {
-    img: "https://placekitten.com/400/402",
-  },
-  {
-    img: "https://placekitten.com/600/300",
-  },
-  {
-    img: "https://placekitten.com/500/450",
-  },
-  {
-    img: "https://placekitten.com/300/500",
-  },
-  {
-    img: "https://placekitten.com/500/600",
-  },
-  {
-    img: "https://placekitten.com/550/600",
-  },
-  {
-    img: "https://placekitten.com/600/800",
-  },
-  {
-    img: "https://placekitten.com/1000/700",
-  },
-  {
-    img: "https://placekitten.com/1000/400",
-  },
-];
-
-function galeri() {
+function galeri({ galeris }) {
   return (
     <Layout>
-      {/* <img
-        src="images/galeri-header.png"
-        className="w-full object-contain pt-11 md:max-h-80"
-      ></img> */}
       <Image
         src="/images/galeri-header.png"
         layout="responsive"
@@ -53,9 +21,14 @@ function galeri() {
       </div>
 
       <div className="masonry md:px-24 md:py-36 py-10 px-8">
-        {images.map((item) => (
-          <div className="rounded-lg overflow-hidden mb-8" key={item.img}>
-            <img src={item.img} className="w-full" />
+        {galeris.map((resim) => (
+          <div className="rounded-lg overflow-hidden mb-8" key={resim.id}>
+            <Image
+              className="rounded-lg"
+              src={resim.image.url}
+              width={resim.image.width}
+              height={resim.image.height}
+            />
           </div>
         ))}
       </div>
@@ -64,3 +37,28 @@ function galeri() {
 }
 
 export default galeri;
+
+export const getStaticProps = async (req, res) => {
+  const { data } = await client.query({
+    query: gql`
+      query resimler {
+        galeris {
+          id
+          image {
+            url
+            width
+            height
+          }
+          altEtiketi
+        }
+      }
+    `,
+  });
+
+  const { galeris } = data;
+  return {
+    props: {
+      galeris,
+    },
+  };
+};

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 function Footer() {
   return (
@@ -9,12 +8,12 @@ function Footer() {
           <div className="mt-8 sm:mt-0 sm:w-full flex flex-col md:flex-row justify-between">
             <img
               className="absolute w-80 left-20 hidden md:block"
-              src="images/footer-left.svg"
+              src="/images/footer-left.svg"
             />
             <div className="flex flex-col ">
               <img
                 className="mb-7"
-                src="images/hiy-logo-white.svg"
+                src="/images/hiy-logo-white.svg"
                 alt="Halil İbrahim Yılmaz logo beyaz hali"
               ></img>
               <div className="flex mb-3">
@@ -137,8 +136,8 @@ function Footer() {
                 </Link>
               </span>
               <img
-                className="absolute w-56 top-14 right-28 hidden md:block"
-                src="images/footer-right.svg"
+                className="absolute w-56 top-14 right-28 hidden md:block "
+                src="/images/footer-right.svg"
               />
               <div className="flex space-x-4">
                 <img
@@ -148,7 +147,7 @@ function Footer() {
                   alt=""
                 />
                 <div className="flex flex-col">
-                  <p className="md:w-64 mb-4">
+                  <p className="md:w-64 mb-4 relative">
                     Integer molestie scelerisque et vel lorem sed proin id
                     varius
                   </p>
@@ -163,7 +162,7 @@ function Footer() {
                   alt=""
                 />
                 <div className="flex flex-col">
-                  <p className="md:w-64 mb-4">
+                  <p className="md:w-64 mb-4 relative">
                     Integer molestie scelerisque et vel lorem sed proin id
                     varius
                   </p>
@@ -183,16 +182,16 @@ function Footer() {
               </p>
               <div className="flex  md:space-x-20 ">
                 <Link href="twitter.com">
-                  <img src="images/twitter.png" alt="twitter ikonu" />
+                  <img src="/images/twitter.png" alt="twitter ikonu" />
                 </Link>
                 <Link href="twitter.com">
-                  <img src="images/facebook.png" alt="facebook ikonu" />
+                  <img src="/images/facebook.png" alt="facebook ikonu" />
                 </Link>
                 <Link href="twitter.com">
-                  <img src="images/instagram.png" alt="instagram ikonu" />
+                  <img src="/images/instagram.png" alt="instagram ikonu" />
                 </Link>
                 <Link href="twitter.com">
-                  <img src="images/youtube.png" alt="youtube ikonu" />
+                  <img src="/images/youtube.png" alt="youtube ikonu" />
                 </Link>
               </div>
             </div>

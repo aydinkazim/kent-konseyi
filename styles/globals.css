@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* -------------------Scrollbar------------------- */
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -26,7 +28,19 @@
   background: #a0aec0;
 }
 
-/* ----------------------------------------------------------- */
+/* -------------------Scrollbar------------------- */
+
+.l-21 {
+  line-height: 21.09px;
+}
+
+.h-87 {
+  height: 87px;
+}
+
+.max-w-300 {
+  max-width: 300px;
+}
 
 .cerceve {
   width: 270px;
@@ -34,17 +48,21 @@
   margin: 23px 20.6px 21px 23px;
 }
 
-.icerik {
-  height: 450px;
+.image-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.127273) 0%,
+    #000000 85.42%
+  );
 }
 
-.youtube{
+.youtube {
   height: 200px;
 }
 
 @media (min-width: 640px) {
   /*sm*/
-  .youtube{
+  .youtube {
     height: 500px;
   }
 }

@@ -54,16 +54,16 @@ function Topbar() {
           </div>
           <div className="flex md:space-x-8">
             <Link href="twitter.com">
-              <img src="images/twitter-dark.png" alt="twitter ikonu" />
+              <img src="/images/twitter-dark.png" alt="twitter ikonu" />
             </Link>
             <Link href="twitter.com">
-              <img src="images/facebook-dark.png" alt="facebook ikonu" />
+              <img src="/images/facebook-dark.png" alt="facebook ikonu" />
             </Link>
             <Link href="twitter.com">
-              <img src="images/instagram-dark.png" alt="instagram ikonu" />
+              <img src="/images/instagram-dark.png" alt="instagram ikonu" />
             </Link>
             <Link href="twitter.com">
-              <img src="images/youtube-dark.png" alt="youtube ikonu" />
+              <img src="/images/youtube-dark.png" alt="youtube ikonu" />
             </Link>
           </div>
         </div>

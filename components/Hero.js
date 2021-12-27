@@ -19,7 +19,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex md:w-1/2 justify-end">
-          <img src="/images/hero.png" className=""></img>
+          <img src="/images/hero.png" className="object-contain "></img>
         </div>
       </div>
     </>
