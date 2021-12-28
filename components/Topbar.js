@@ -53,18 +53,24 @@ function Topbar() {
             </div>
           </div>
           <div className="flex md:space-x-8">
-            <Link href="twitter.com">
+            <a target={"_blank"} href="https://twitter.com/halilibrahimy_">
               <img src="/images/twitter-dark.png" alt="twitter ikonu" />
-            </Link>
-            <Link href="twitter.com">
+            </a>
+            <a target={"_blank"} href="https://www.facebook.com/halilbirahimy">
               <img src="/images/facebook-dark.png" alt="facebook ikonu" />
-            </Link>
-            <Link href="twitter.com">
+            </a>
+            <a
+              target={"_blank"}
+              href="https://www.instagram.com/halilibrahimyilmazz_"
+            >
               <img src="/images/instagram-dark.png" alt="instagram ikonu" />
-            </Link>
-            <Link href="twitter.com">
+            </a>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/channel/UCf_-6wTzRA-trW56hNffKaQ/videos"
+            >
               <img src="/images/youtube-dark.png" alt="youtube ikonu" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

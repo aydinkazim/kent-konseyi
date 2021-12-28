@@ -20,11 +20,11 @@ function galeri({ galeris }) {
         </span>
       </div>
 
-      <div className="masonry md:px-24 md:py-36 py-10 px-8">
+      <div className="masonry md:px-24 md:py-36 py-10 px-8 ">
         {galeris.map((resim) => (
-          <div className="rounded-lg overflow-hidden mb-8" key={resim.id}>
+          <div className="rounded-lg overflow-hidden mb-8 " key={resim.id}>
             <Image
-              className="rounded-lg"
+              className="rounded-lg transform transition duration-500 hover:scale-125"
               src={resim.image.url}
               width={resim.image.width}
               height={resim.image.height}

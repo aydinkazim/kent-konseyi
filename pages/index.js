@@ -6,6 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import client from "../apollo-client";
 import { gql } from "@apollo/client";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default function Home({ posts, video }) {
   let [isOpen, setIsOpen] = useState(false);
@@ -124,7 +125,7 @@ export default function Home({ posts, video }) {
         <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Haberler
         </div>
-        <div className="md:px-24 flex flex-wrap justify-between">
+        <div className="md:px-24 flex flex-wrap md:justify-between justify-center max-w-7xl mx-auto">
           {posts.map((post) => (
             <Card
               key={post.id}
@@ -145,62 +146,61 @@ export default function Home({ posts, video }) {
         <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Sosyal Medya
         </div>
-        <div className="text-center">
-          <Tab.Group>
-            <Tab.List>
-              <Tab as={Fragment}>
-                {({ selected }) => (
-                  <button
-                    className={
-                      selected ? "bg-koyuMor text-beyaz mr-20" : "mr-20"
-                    }
-                  >
-                    <img src="images/twitter.png"></img>
-                  </button>
-                )}
-              </Tab>
-              <Tab as={Fragment}>
-                {({ selected }) => (
-                  <button
-                    className={
-                      selected ? "bg-koyuMor text-beyaz mr-20" : "mr-20"
-                    }
-                  >
-                    <img src="images/facebook.png"></img>
-                  </button>
-                )}
-              </Tab>
-              <Tab as={Fragment}>
-                {({ selected }) => (
-                  <button className={selected ? "bg-koyuMor text-beyaz " : ""}>
-                    <img src="images/youtube.png"></img>
-                  </button>
-                )}
-              </Tab>
-              {/* ...  */}
-            </Tab.List>
-            <div></div>
-            <Tab.Panels>
-              <Tab.Panel>
-                <a
-                  className="twitter-timeline"
-                  href="https://twitter.com/halilibrahimy_?ref_src=twsrc%5Etfw"
-                >
-                  Tweets by halilibrahimy_
-                </a>
-              </Tab.Panel>
-              <Tab.Panel>Facebook</Tab.Panel>
-              <Tab.Panel>Youtube</Tab.Panel>
-              {/* ... */}
-            </Tab.Panels>
-          </Tab.Group>
+        <div className="flex justify-center max-w-7xl mx-auto space-x-20">
+          <a
+            target={"_blank"}
+            href="https://twitter.com/halilibrahimy_"
+            className="animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="#1DA1F2"
+            >
+              <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z" />
+            </svg>
+          </a>
+          <a
+            target={"_blank"}
+            href="https://www.facebook.com/halilbirahimy"
+            className="animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="#4267B2"
+            >
+              <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </a>
+          <a
+            target={"_blank"}
+            href="https://www.youtube.com/channel/UCf_-6wTzRA-trW56hNffKaQ/videos"
+            className="motion-safe:animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="58"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="#FF0000"
+            >
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+            </svg>
+          </a>
         </div>
         <div className="h-72 bg-footer mt-40">
-          <img
-            className="absolute m-auto left-0 right-0 md:-mt-14"
-            src="https://placekitten.com/494/423"
-            alt=""
-          />
+          <div className="absolute w-full md:-mt-14 text-center">
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="halilibrahimy_"
+              options={{ height: 400, width: 500 }}
+            />
+          </div>
         </div>
       </div>
     </Layout>

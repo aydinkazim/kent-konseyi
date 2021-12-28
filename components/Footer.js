@@ -1,6 +1,8 @@
 import Link from "next/link";
+import dayjs from "dayjs";
+import "dayjs/locale/tr";
 
-function Footer() {
+function Footer({ posts }) {
   return (
     <footer className="footer bg-footer text-beyaz relative pt-1 lg:pt-24 border-b-2 ">
       <div className=" lg:px-24 px-8">
@@ -94,13 +96,13 @@ function Footer() {
             </div>
             <div className="flex flex-col font-['Helvetica']">
               <span className="my-2">
-                <Link href="/hakkinda">
-                  <a className="font-bold text-lg">Hakkımda</a>
+                <Link href="/">
+                  <a className="font-bold text-lg">Anasayfa</a>
                 </Link>
               </span>
-              <span className="my-2.5">
-                <Link href="/blog">
-                  <a className="font-bold text-lg">Blog</a>
+              <span className="my-2">
+                <Link href="/hakkinda">
+                  <a className="font-bold text-lg">Hakkında</a>
                 </Link>
               </span>
               <span className="my-2.5">
@@ -113,7 +115,7 @@ function Footer() {
                   <a className="font-bold text-lg">Galeri</a>
                 </Link>
               </span>
-              <span className="my-2.5">
+              {/* <span className="my-2.5">
                 <Link href="/galeri">
                   <a className="">Fotoğraflar</a>
                 </Link>
@@ -127,48 +129,34 @@ function Footer() {
                 <Link href="/galeri">
                   <a className="">Videolar</a>
                 </Link>
-              </span>
+              </span> */}
             </div>
             <div className="flex flex-col space-y-8 ">
               <span className="mt-2 -my-2">
-                <Link href="/hakkimda">
-                  <a className="font-bold text-lg">Latest Post</a>
+                <Link href="/haberler">
+                  <a className="font-bold text-lg">Son Gönderiler</a>
                 </Link>
               </span>
               <img
                 className="absolute w-56 top-14 right-28 hidden md:block "
                 src="/images/footer-right.svg"
               />
-              <div className="flex space-x-4">
-                <img
-                  className="rounded-xl w-full"
-                  style={{ width: "100px", height: "100px" }}
-                  src="https://placekitten.com/400/400"
-                  alt=""
-                />
-                <div className="flex flex-col">
-                  <p className="md:w-64 mb-4 relative">
-                    Integer molestie scelerisque et vel lorem sed proin id
-                    varius
-                  </p>
-                  <div>7 Kasım, 2021</div>
+              {posts.map((post) => (
+                <div key={post.id} className="flex space-x-4">
+                  <img
+                    className="rounded-xl w-full object-cover"
+                    style={{ width: "100px", height: "100px" }}
+                    src={post.coverImage.url}
+                    alt=""
+                  />
+                  <div className="flex flex-col">
+                    <p className="md:w-64 mb-4 relative">{post.title}</p>
+                    <div>
+                      {dayjs(post.date).locale("tr").format("DD MMMM YYYY")}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex space-x-4">
-                <img
-                  className="rounded-xl w-full"
-                  style={{ width: "100px", height: "100px" }}
-                  src="https://placekitten.com/100/100"
-                  alt=""
-                />
-                <div className="flex flex-col">
-                  <p className="md:w-64 mb-4 relative">
-                    Integer molestie scelerisque et vel lorem sed proin id
-                    varius
-                  </p>
-                  <div>19 Ekim, 2021</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -181,18 +169,18 @@ function Footer() {
                 Halil İbrahim YILMAZ Resmi Web Sitesi. © 2021
               </p>
               <div className="flex  md:space-x-20 ">
-                <Link href="twitter.com">
+                <a href="https://twitter.com/halilibrahimy_">
                   <img src="/images/twitter.png" alt="twitter ikonu" />
-                </Link>
-                <Link href="twitter.com">
+                </a>
+                <a href="https://www.facebook.com/halilbirahimy">
                   <img src="/images/facebook.png" alt="facebook ikonu" />
-                </Link>
-                <Link href="twitter.com">
+                </a>
+                <a href="https://www.instagram.com/halilibrahimyilmazz_/">
                   <img src="/images/instagram.png" alt="instagram ikonu" />
-                </Link>
-                <Link href="twitter.com">
+                </a>
+                <a href="https://www.youtube.com/channel/UCf_-6wTzRA-trW56hNffKaQ/videos">
                   <img src="/images/youtube.png" alt="youtube ikonu" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
