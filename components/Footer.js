@@ -142,20 +142,22 @@ function Footer({ posts }) {
                 src="/images/footer-right.svg"
               />
               {posts.map((post) => (
-                <div key={post.id} className="flex space-x-4">
-                  <img
-                    className="rounded-xl w-full object-cover"
-                    style={{ width: "100px", height: "100px" }}
-                    src={post.coverImage.url}
-                    alt=""
-                  />
-                  <div className="flex flex-col">
-                    <p className="md:w-64 mb-4 relative">{post.title}</p>
-                    <div>
-                      {dayjs(post.date).locale("tr").format("DD MMMM YYYY")}
+                <a key={post.id} href={`haberler/${post.slug}`}>
+                  <div className="flex space-x-4">
+                    <img
+                      className="rounded-xl w-full object-cover"
+                      style={{ width: "100px", height: "100px" }}
+                      src={post.coverImage.url}
+                      alt=""
+                    />
+                    <div className="flex flex-col">
+                      <p className="md:w-64 mb-4 relative">{post.title}</p>
+                      <div>
+                        {dayjs(post.date).locale("tr").format("DD MMMM YYYY")}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
