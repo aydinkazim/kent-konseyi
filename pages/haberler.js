@@ -9,7 +9,7 @@ function haberler({ posts }) {
   return (
     <Layout>
       <Container>
-        <div className="flex flex-wrap justify-center md:justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4   place-items-center md:gap-2">
           {posts.map((post) => (
             <Card
               key={post.id}

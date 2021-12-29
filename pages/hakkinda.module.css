@@ -8,6 +8,12 @@
   margin-bottom: 10px;
 }
 
+.test > h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 768px) {
   /*md*/
 

@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="flex flex-wrap relative">
         <div className="flex flex-col md:w-1/2 pt-5 md:pt-44 px-5 md:px-24 ">
           <div className="text-koyuMor md:text-2xl font-bold font-['Helvetica'] pb-4">
-            Ankara Kent Konseyi Belediye Başkanı
+            Ankara Kent Konseyi Başkanı
           </div>
           <div className="font-['Roboto'] md:text-5xl pb-4 ">
             <span className="font-bold">Bizimle Birlikte</span> Daha İyi
