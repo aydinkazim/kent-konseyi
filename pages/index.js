@@ -1,12 +1,13 @@
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
-import { Tab } from "@headlessui/react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import client from "../apollo-client";
 import { gql } from "@apollo/client";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Home({ posts, video }) {
   let [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,25 @@ export default function Home({ posts, video }) {
 
   return (
     <Layout>
+      <Head>
+        <title>
+          Halil İbrahim Yılmaz | Ankara Kent Konseyi Belediye Başkanı
+        </title>
+        <meta
+          name="description"
+          content="Halil İbrahim Yılmaz, Türkiye Cumhuriyetinin Başkenti Ankara’da, toplumun bütün kesimlerini ortak akıl ve dayanışma kültürü ile kent için emek verir hale getirme hedefiyle çalışmalarına devam ediyor."
+        />
+        <meta
+          property="og:image"
+          content={useRouter().pathname + "images/halil-ibrahim-yilmaz.png"}
+        />
+      </Head>
       <Hero />
       <img
         className=" md:-mt-96 md:-mb-12 -mt-16 w-full"
         src="images/hero-bottom.png"
       />
-      <div className="relative image-overlay">
+      <article className="relative image-overlay">
         <img
           style={{ height: "600px" }}
           className="md:h-96 object-cover w-full opacity-40"
@@ -115,17 +129,17 @@ export default function Home({ posts, video }) {
             </div>
           </Dialog>
         </Transition>
-      </div>
+      </article>
 
-      <div className="pt-44 pb-28 relative">
+      <article className="pt-44 pb-28 relative">
         <img
           className="absolute md:left-20 md:top-auto top-60"
           src="images/haberler-left.svg"
           alt="alanı süslemek için puantiye şeklinde küçük küçük yuvarlaklar"
         />
-        <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
+        <h2 className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Haberler
-        </div>
+        </h2>
         <div className="md:px-24 flex flex-wrap md:justify-between justify-center max-w-7xl mx-auto">
           {posts.map((post) => (
             <Card
@@ -142,12 +156,12 @@ export default function Home({ posts, video }) {
           src="images/haberler-right.svg"
           alt="alanı süslemek için puantiye şeklinde küçük küçük yuvarlaklar"
         />
-      </div>
+      </article>
 
-      <div className="pt-28 pb-60 relative">
-        <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
+      <article className="pt-28 pb-60 relative">
+        <h2 className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Sosyal Medya
-        </div>
+        </h2>
         <div className="flex justify-center max-w-7xl mx-auto space-x-20">
           <a
             target={"_blank"}
@@ -204,7 +218,7 @@ export default function Home({ posts, video }) {
             />
           </div>
         </div>
-      </div>
+      </article>
     </Layout>
   );
 }

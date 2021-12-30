@@ -41,7 +41,7 @@ function Layout({ children }) {
   }, [fetchData]);
 
   return (
-    <div className="bg-gri ">
+    <section className="bg-gri ">
       <Head>
         <meta name="author" content="Ankara Kent Konseyi" />
         <link
@@ -58,7 +58,7 @@ function Layout({ children }) {
       <Header />
       {children}
       <Footer posts={posts} />
-    </div>
+    </section>
   );
 }
 

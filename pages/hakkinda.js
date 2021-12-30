@@ -4,10 +4,16 @@ import React from "react";
 import client from "../apollo-client";
 import Layout from "../components/Layout";
 import styles from "./hakkinda.module.css";
+import Head from "next/head";
 
 function hakkinda({ hakkinda }) {
   return (
     <Layout>
+      <Head>
+        <title>{hakkinda.metaTitle}</title>
+        <meta name="description" content={hakkinda.metaDescription} />
+        <meta property="og:image" content={hakkinda.image.url} />
+      </Head>
       <div className="grid md:grid-cols-5 gap-4 md:px-24 px-8 pb-24 pt-11 font-[Roboto]">
         <div className="xl:col-span-2 col-span-5 relative ">
           {/* <img
@@ -16,11 +22,12 @@ function hakkinda({ hakkinda }) {
           /> */}
           <Image
             className="rounded-xl object-cover"
-            src={hakkinda ? hakkinda.resim.url : "/images/hiy.png"}
+            src={hakkinda ? hakkinda.image.url : "/images/hiy.png"}
             layout="intrinsic"
             height={620}
             width={448}
             priority={true}
+            alt={hakkinda.altEtiketi}
           />
           {/* Çerçeve <div className="absolute border-beyaz rounded-xl border-2  cerceve top-0 left-0 "></div> */}
         </div>
@@ -79,12 +86,15 @@ export const getStaticProps = async (req, res) => {
         hakkinda(where: { id: "ckxme6528mubx0b60g5ih1gq3" }) {
           id
           title
-          resim {
+          image {
             url
           }
           description {
             html
           }
+          altEtiketi
+          metaTitle
+          metaDescription
         }
       }
     `,

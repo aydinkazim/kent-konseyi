@@ -4,11 +4,11 @@ import React from "react";
 import dayjs from "dayjs";
 import "dayjs/locale/tr";
 
-export default function Card({ image, description, date, slug }) {
+export default function Card({ image, imageAltText, description, date, slug }) {
   const tarih = dayjs(date).locale("tr").format("DD MMMM YYYY");
 
   return (
-    <div className="z-10 hover:cursor-pointer pb-5">
+    <div className="z-10 hover:cursor-pointer pb-5 transform transition duration-500 hover:scale-105">
       <Link href={`haberler/${slug}`}>
         <div className="bg-beyaz rounded-xl max-w-300">
           <div>
@@ -18,10 +18,11 @@ export default function Card({ image, description, date, slug }) {
               alt=""
             /> */}
             <Image
-              className="rounded-t-lg object-cover"
+              className="rounded-t-lg object-cover transform transition duration-500 hover:scale-105"
               src={image ? image : "https://placekitten.com/300/242"}
               width={300}
               height={242}
+              alt={imageAltText}
             />
           </div>
 

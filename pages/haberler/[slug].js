@@ -17,6 +17,7 @@ function haber({ post }) {
           <Head>
             <title>{post.title}</title>
             <meta property="og:image" content={post.coverImage.url} />
+            <meta name="description" content={post.description} />
             <link
               rel="canonical"
               href={domain + useRouter().asPath}
