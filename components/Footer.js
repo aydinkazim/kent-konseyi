@@ -11,6 +11,7 @@ function Footer({ posts }) {
             <img
               className="absolute w-80 left-20 hidden md:block"
               src="/images/footer-left.svg"
+              alt="alanı süslemek için puantiye şeklinde küçük küçük yuvarlaklar"
             />
             <div className="flex flex-col ">
               <img
@@ -140,6 +141,7 @@ function Footer({ posts }) {
               <img
                 className="absolute w-56 top-14 right-28 hidden md:block "
                 src="/images/footer-right.svg"
+                alt="alanı süslemek için çapraz şeritler"
               />
               {posts.map((post) => (
                 <a key={post.id} href={`haberler/${post.slug}`}>
@@ -148,7 +150,7 @@ function Footer({ posts }) {
                       className="rounded-xl w-full object-cover"
                       style={{ width: "100px", height: "100px" }}
                       src={post.coverImage.url}
-                      alt=""
+                      alt={post.imageAltText}
                     />
                     <div className="flex flex-col">
                       <p className="md:w-64 mb-4 relative">{post.title}</p>

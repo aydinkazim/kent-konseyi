@@ -6,6 +6,8 @@ import PostHeader from "../../components/PostHeader";
 import Container from "../../components/Container";
 import client from "../../apollo-client";
 import { gql } from "@apollo/client";
+import { domain } from "../../config/consts";
+import { useRouter } from "next/router";
 
 function haber({ post }) {
   return (
@@ -15,12 +17,18 @@ function haber({ post }) {
           <Head>
             <title>{post.title}</title>
             <meta property="og:image" content={post.coverImage.url} />
+            <link
+              rel="canonical"
+              href={domain + useRouter().asPath}
+              key="canonical"
+            />
           </Head>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage.url}
             width={post.coverImage.width}
             height={300}
+            alt={post.imageAltText}
             // height={post.coverImage.height}
           />
           <PostBody content={post.content.html} />
@@ -69,6 +77,7 @@ export async function getStaticProps({ params }) {
             width
             height
           }
+          imageAltText
           date
           description
         }

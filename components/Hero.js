@@ -19,7 +19,11 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex md:w-1/2 justify-end">
-          <img src="/images/hero.png" className="object-contain "></img>
+          <img
+            src="/images/hero.png"
+            className="object-contain"
+            alt="Gri takım elbise ve gülümseyerek sunum yapan Ankara Kent Konseyi Başkanı Halil İbrahim Yılmaz"
+          ></img>
         </div>
       </div>
     </>

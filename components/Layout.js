@@ -5,7 +5,8 @@ import Header from "./Header";
 import Topbar from "./Topbar";
 import client from "../apollo-client";
 import { gql } from "@apollo/client";
-
+import { domain } from "../config/consts";
+import { useRouter } from "next/router";
 
 function Layout({ children }) {
   const [posts, setPosts] = useState([]);
@@ -24,6 +25,7 @@ function Layout({ children }) {
             coverImage {
               url
             }
+            imageAltText
             date
             description
           }
@@ -41,15 +43,16 @@ function Layout({ children }) {
   return (
     <div className="bg-gri ">
       <Head>
+        <meta name="author" content="Ankara Kent Konseyi" />
+        <link
+          rel="canonical"
+          href={domain + useRouter().pathname}
+          key="canonical"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
       </Head>
       <Topbar />
       <Header />

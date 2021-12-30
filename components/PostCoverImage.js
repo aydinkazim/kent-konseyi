@@ -2,11 +2,11 @@ import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
 
-function PostCoverImage({ title, src, slug, height, width }) {
+function PostCoverImage({ title, src, slug, height, width, alt }) {
   const image = (
     <Image
       src={src}
-      alt={`Cover Image for ${title}`}
+      alt={alt}
       className={cn("shadow-sm", {
         "hover:shadow-md transition-shadow duration-200": slug,
       })}

@@ -25,14 +25,13 @@ export default function Home({ posts, video }) {
       <img
         className=" md:-mt-96 md:-mb-12 -mt-16 w-full"
         src="images/hero-bottom.png"
-        alt=""
       />
       <div className="relative image-overlay">
         <img
           style={{ height: "600px" }}
           className="md:h-96 object-cover w-full opacity-40"
           src={video.videoResim.url}
-          alt=""
+          alt={video.videoResimAltEtiketi}
         />
         <p className="absolute md:bottom-10 bottom-5 left-7 right-0 md:w-2/3 text-beyaz font-[Roboto] md:text-2xl text-xl ">
           {/* <span className="font-bold">Halil İbrahim Yılmaz</span>, Türkiye
@@ -45,6 +44,7 @@ export default function Home({ posts, video }) {
           onClick={openModal}
           className="absolute md:right-24 top-1/2  right-5 md:w-24 w-11 hover:cursor-pointer"
           src="/images/play-icon.png"
+          alt="Beyaz kare içinde mor üçgen şeklinde oynat ikonu"
         />
         <Transition appear show={isOpen} as={Fragment}>
           <Dialog
@@ -121,6 +121,7 @@ export default function Home({ posts, video }) {
         <img
           className="absolute md:left-20 md:top-auto top-60"
           src="images/haberler-left.svg"
+          alt="alanı süslemek için puantiye şeklinde küçük küçük yuvarlaklar"
         />
         <div className="pb-12 mx-auto text-center text-4xl font-medium font-[Roboto]">
           Haberler
@@ -139,6 +140,7 @@ export default function Home({ posts, video }) {
         <img
           className="absolute right-0 md:top-1/2 bottom-40"
           src="images/haberler-right.svg"
+          alt="alanı süslemek için puantiye şeklinde küçük küçük yuvarlaklar"
         />
       </div>
 
@@ -231,6 +233,7 @@ export const getStaticProps = async (req, res) => {
             url
           }
           youtubeUrl
+          videoResimAltEtiketi
         }
       }
     `,

@@ -22,7 +22,10 @@ function Navbar() {
       <nav className="flex items-center flex-wrap p-3 lg:px-24 px-8 ">
         <Link href="/">
           <a className="inline-flex items-center  mr-4 ">
-            <img src="/images/hiy-logo.svg"></img>
+            <img
+              src="/images/hiy-logo.svg"
+              alt="Halil İbrahim Yılmaz yazısının etrafındaki dikdörtgenli site logosu"
+            ></img>
           </a>
         </Link>
         <button

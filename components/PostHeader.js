@@ -2,7 +2,7 @@ import React from "react";
 import PostTitle from "./PostTitle";
 import PostCoverImage from "./PostCoverImage";
 
-function PostHeader({ title, coverImage, date, width, height }) {
+function PostHeader({ title, coverImage, width, height, alt }) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -12,6 +12,7 @@ function PostHeader({ title, coverImage, date, width, height }) {
           src={coverImage}
           height={height}
           width={width}
+          alt={alt}
         />
       </div>
     </>
